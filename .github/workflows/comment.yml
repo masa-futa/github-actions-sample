@@ -10,4 +10,6 @@ jobs:
       - uses: actions/checkout@v4
       - run: gh pr comment "${GITHUB_HEAD_REF}" --body "Hello, ${GITHUB_ACTOR}"
         env:
+          # ワークフロー開始時に自動生成し、終了すると自動的に破棄される
+          # github.token ともかける
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GITHUB_TOKENを渡す
